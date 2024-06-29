@@ -9,7 +9,7 @@ const ListProducts = () => {
 
   const fetchInfo = async () => {
     try {
-      const response = await fetch('http://localhost:4000/allproducts');
+      const response = await fetch('https://snbpnestbackend-i9aqei81v-murtazakhannns-projects.vercel.app/allproducts');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -43,7 +43,7 @@ const ListProducts = () => {
 
   const remove_product = async (id) => {
     if(confirm("Are you sure you want to remove product?")){
-    await fetch('http://localhost:4000/removeproduct', {
+    await fetch('https://snbpnestbackend-i9aqei81v-murtazakhannns-projects.vercel.app/removeproduct', {
       method: 'POST',
       headers: {
         Accept:'application/json' ,
