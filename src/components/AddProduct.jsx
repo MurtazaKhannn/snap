@@ -40,7 +40,7 @@ const AddProduct = () => {
     }).then((resp) => resp.json()).then((data) => {responseData=data});
 
 
-      // product.image = responseData.image_url;
+      product.image = responseData.image_url;
 
       // product.image = "https://silvanestbackend.vercel.app/images/2RingConferenceFSA4.jpg"
       // console.log(product);
