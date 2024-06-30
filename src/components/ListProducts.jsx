@@ -9,7 +9,7 @@ const ListProducts = () => {
 
   const fetchInfo = async () => {
     try {
-      const response = await fetch('https://silvanestbackend.vercel.app/allproducts');
+      const response = await fetch('https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/allproducts');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
