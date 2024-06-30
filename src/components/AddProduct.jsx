@@ -31,16 +31,18 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append("product", image);
 
-    await fetch('https://silvanestbackend.vercel.app/upload/images' , {
-      method: 'POST' ,
-      headers:{
-        Accept:'application/json'
-      } ,
-      body:formData
-    }).then((resp) => resp.json()).then((data) => {responseData=data});
+    // await fetch('https://silvanestbackend.vercel.app/upload/images' , {
+    //   method: 'POST' ,
+    //   headers:{
+    //     Accept:'application/json'
+    //   } ,
+    //   body:formData
+    // }).then((resp) => resp.json()).then((data) => {responseData=data});
 
-    if(responseData.success){
-      product.image = responseData.image_url;
+
+      // product.image = responseData.image_url;
+
+      product.image = "https://silvanestbackend.vercel.app/images/2RingConferenceFSA4.jpg"
       console.log(product);
 
       await fetch('https://silvanestbackend.vercel.app/addproduct' , {
@@ -53,7 +55,6 @@ const AddProduct = () => {
       }).then((res) => res.json()).then((data) => {
         data.success?alert("Product Added") : alert("Failed");
       })
-    }
 
 
   }
