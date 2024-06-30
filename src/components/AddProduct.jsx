@@ -31,7 +31,7 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append("product", image);
 
-    await fetch('https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/upload' , {
+    await fetch('https://silvanestbackend.vercel.app/upload' , {
       method: 'POST' ,
       headers:{
         Accept:'application/json'
@@ -43,7 +43,7 @@ const AddProduct = () => {
       product.image = responseData.image_url;
       console.log(product);
 
-      await fetch('https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/addproduct' , {
+      await fetch('https://silvanestbackend.vercel.app/addproduct' , {
         method: 'POST',
         headers: {
           Accept:'application/json' ,
