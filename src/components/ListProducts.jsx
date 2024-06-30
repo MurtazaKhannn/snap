@@ -43,7 +43,7 @@ const ListProducts = () => {
 
   const remove_product = async (id) => {
     if(confirm("Are you sure you want to remove product?")){
-    await fetch('https://silvanestbackend.vercel.app/removeproduct', {
+    await fetch('https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/removeproduct', {
       method: 'POST',
       headers: {
         Accept:'application/json' ,
