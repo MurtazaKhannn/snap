@@ -21,7 +21,7 @@ const AddProduct = () => {
       setpreview(reader.result);
     };
     reader.readAsDataURL(file);
-    setimage();
+    // setimage();
   }
 
   const changeHandler = (e) => {
