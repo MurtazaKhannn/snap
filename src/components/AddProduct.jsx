@@ -15,7 +15,7 @@ const AddProduct = () => {
   });
   const imageHandler = (e) => {
     const file = e.target.files[0];
-
+    setimage(file);
     var reader = new FileReader();
     reader.onload = function () {
       setpreview(reader.result);
@@ -36,17 +36,18 @@ const AddProduct = () => {
     let responseData;
     let product = productDetails;
 
+    if(!image) return ;
+
     let formData = new FormData();
     formData.append("product", image);
 
-    if(!preview) return ;
 
     await fetch('https://silvanestbackend.vercel.app/upload/images' , {
       method: 'POST' ,
+      body: formData ,
       headers:{
         Accept:'application/json'
       } ,
-      image_url : preview
     })
     .then((resp) => resp.json()).then((data) => {responseData=data});
 
