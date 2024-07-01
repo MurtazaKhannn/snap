@@ -21,7 +21,7 @@ const AddProduct = () => {
      ...productDetails,
       [e.target.name] : e.target.value
     })
-  }
+  };
 
   const Add_Product = async () => {
     console.log(productDetails);
