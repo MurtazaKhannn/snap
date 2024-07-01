@@ -98,7 +98,6 @@ const AddProduct = () => {
       <div>
         <p>Product Availability</p>
         <input value={productDetails.available} onChange={changeHandler} type="text" name='available' placeholder=' InStock/OutofStock' className='outline-none border-none p-2 bg-zinc-100' />
-        <img src={preview} alt="" />
       </div>
 
       
@@ -120,6 +119,10 @@ const AddProduct = () => {
           { image ? URL.createObjectURL(image) : <FaFileUpload size={18} />}
         </label>
         <input onChange={imageHandler} type="file" name='image' id='file-input' hidden />
+        <div className='flex items-center gap-5'>
+        <p className='font-bold'>IMAGE : </p>
+        <img className='w-[20vh] mt-5' src={preview} alt="" />
+        </div>
       </div>
 
       <button onClick={() => {Add_Product()}} className='Addproduct-button text-white bg-yellow-300 w-20 px-3 py-2 rounded-md'>ADD</button>
