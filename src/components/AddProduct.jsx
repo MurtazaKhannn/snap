@@ -31,19 +31,19 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append("product", image);
 
-    // await fetch('https://silvanestbackend.vercel.app/upload/images' , {
-    //   method: 'POST' ,
-    //   headers:{
-    //     Accept:'application/json'
-    //   } ,
-    //   body:formData
-    // }).then((resp) => resp.json()).then((data) => {responseData=data});
+    await fetch('https://silvanestbackend.vercel.app/upload/images' , {
+      method: 'POST' ,
+      headers:{
+        Accept:'application/json'
+      } ,
+      body:formData
+    }).then((resp) => resp.json()).then((data) => {responseData=data});
 
 
-      // product.image = responseData.image_url;
+      product.image = responseData.image_url;
 
-      product.image = "https://silvanestbackend.vercel.app/images/2RingConferenceFSA4.jpg"
-      console.log(product);
+      // product.image = "https://silvanestbackend.vercel.app/images/2RingConferenceFSA4.jpg"
+      // console.log(product);
 
       await fetch('https://silvanestbackend.vercel.app/addproduct' , {
         method: 'POST',
