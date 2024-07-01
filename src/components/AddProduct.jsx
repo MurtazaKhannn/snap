@@ -47,10 +47,11 @@ const AddProduct = () => {
         Accept:'application/json'
       } ,
       image_url : preview
-    }).then((resp) => resp.json()).then((data) => {responseData=data});
+    })
+    // .then((resp) => resp.json()).then((data) => {responseData=data});
 
 
-      product.image = responseData.image_url;
+      product.image = image_url;
 
       // product.image = "https://silvanestbackend.vercel.app/images/2RingConferenceFSA4.jpg"
       // console.log(product);
