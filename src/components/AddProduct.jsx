@@ -3,6 +3,7 @@ import { FaFileUpload } from "react-icons/fa";
 
 const AddProduct = () => {
 
+  const [preview, setpreview] = useState("");
   const [image , setimage] = useState(false);
   const [productDetails , setproductDetails] = useState({
     name: "" ,
@@ -13,7 +14,14 @@ const AddProduct = () => {
     description: "" 
   });
   const imageHandler = (e) => {
-    setimage(e.target.files[0]);
+    const file = e.target.files[0];
+
+    var reader = new FileReader();
+    reader.onload = function () {
+      setpreview(reader.result);
+    };
+    reader.readAsDataURL(file);
+    setimage();
   }
 
   const changeHandler = (e) => {
@@ -90,6 +98,7 @@ const AddProduct = () => {
       <div>
         <p>Product Availability</p>
         <input value={productDetails.available} onChange={changeHandler} type="text" name='available' placeholder=' InStock/OutofStock' className='outline-none border-none p-2 bg-zinc-100' />
+        <img src={preview} alt="" />
       </div>
 
       
